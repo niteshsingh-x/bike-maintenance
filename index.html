@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Bike Care | Maintenance & Services</title>
+    <title>Pro Bike Care | Smart Maintenance Estimator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -27,8 +27,8 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Keep Your Ride <span class="highlight">Perfect</span></h1>
-            <p>Expert maintenance tips, accurate cost estimation, and service booking for all bike models.</p>
-            <a href="#services" class="btn-primary">Explore Services</a>
+            <p>Smart maintenance cost estimation based on your specific bike model. No refresh needed.</p>
+            <a href="#calculator" class="btn-primary">Estimate Cost Now</a>
         </div>
     </section>
 
@@ -59,31 +59,25 @@
         </div>
     </section>
 
-    <!-- Interactive Cost Calculator -->
+    <!-- Interactive Cost Calculator (Smart Search) -->
     <section id="calculator" class="calculator-section">
         <h2>Maintenance Cost Estimator</h2>
-        <p>Select your bike to get accurate pricing based on model and engine capacity.</p>
+        <p>Type your bike model (e.g., "RTR", "Classic", "FZ") to find it instantly.</p>
         
         <div class="calculator-box">
-            <!-- Bike Selector -->
-            <div class="bike-selector">
+            <!-- Smart Search Box -->
+            <div class="search-container">
                 <div class="input-group">
-                    <label>Select Brand</label>
-                    <select id="brandSelect">
-                        <option value="">-- Choose Brand --</option>
-                        <option value="honda">Honda</option>
-                        <option value="yamaha">Yamaha</option>
-                        <option value="royal-enfield">Royal Enfield</option>
-                        <option value="ktm">KTM</option>
-                        <option value="hero">Hero</option>
-                    </select>
+                    <label>Search Bike Model</label>
+                    <div class="search-box-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="bikeSearch" placeholder="Type to search (e.g., 'RTR', 'Shine')" autocomplete="off">
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <label>Select Model</label>
-                    <select id="modelSelect" disabled>
-                        <option value="">-- Select Brand First --</option>
-                    </select>
-                </div>
+                <small id="searchNote" style="color: #aaa; display: block; margin-top: 8px; font-size: 0.9rem;">
+                    Start typing to see available models
+                </small>
             </div>
 
             <form id="serviceForm">
@@ -127,7 +121,7 @@
         <form id="contactForm">
             <input type="text" id="contactName" placeholder="Your Name" required>
             <input type="email" id="contactEmail" placeholder="Your Email" required>
-            <input type="text" id="contactBike" placeholder="Bike Model" required>
+            <input type="text" id="contactBike" placeholder="Bike Model (e.g., Apache RTR 200)" required>
             <textarea id="contactMessage" placeholder="Describe the issue..." rows="5" required></textarea>
             <button type="submit" class="btn-primary">Submit Request</button>
         </form>
@@ -137,7 +131,7 @@
         <p>&copy; 2026 Pro Bike Care. Built by Nitesh Singh.</p>
     </footer>
 
-    <!-- Script loaded as module to avoid global scope pollution -->
+    <!-- Script loaded without module type to ensure global scope isolation via IIFE/DOMContentLoaded -->
     <script src="script.js"></script>
 </body>
 </html>
