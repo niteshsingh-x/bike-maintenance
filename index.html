@@ -27,7 +27,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Keep Your Ride <span class="highlight">Perfect</span></h1>
-            <p>Expert maintenance tips, cost estimation, and service booking for all bike models.</p>
+            <p>Expert maintenance tips, accurate cost estimation, and service booking for all bike models.</p>
             <a href="#services" class="btn-primary">Explore Services</a>
         </div>
     </section>
@@ -62,39 +62,61 @@
     <!-- Interactive Cost Calculator -->
     <section id="calculator" class="calculator-section">
         <h2>Maintenance Cost Estimator</h2>
-        <p>Select the services you need to get an estimated cost.</p>
+        <p>Select your bike to get accurate pricing based on model and engine capacity.</p>
         
         <div class="calculator-box">
+            <!-- Bike Selector -->
+            <div class="bike-selector">
+                <div class="input-group">
+                    <label>Select Brand</label>
+                    <select id="brandSelect">
+                        <option value="">-- Choose Brand --</option>
+                        <option value="honda">Honda</option>
+                        <option value="yamaha">Yamaha</option>
+                        <option value="royal-enfield">Royal Enfield</option>
+                        <option value="ktm">KTM</option>
+                        <option value="hero">Hero</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Select Model</label>
+                    <select id="modelSelect" disabled>
+                        <option value="">-- Select Brand First --</option>
+                    </select>
+                </div>
+            </div>
+
             <form id="serviceForm">
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="service" value="1500" data-name="Oil Change">
-                        Oil Change (₹1500)
+                        <input type="checkbox" name="service" value="base-oil" data-name="Oil Change">
+                        Oil Change
                     </label>
                 </div>
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="service" value="800" data-name="Chain Service">
-                        Chain & Gear Service (₹800)
+                        <input type="checkbox" name="service" value="base-chain" data-name="Chain Service">
+                        Chain & Gear Service
                     </label>
                 </div>
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="service" value="1200" data-name="Brake Service">
-                        Brake Check & Pad Replacement (₹1200)
+                        <input type="checkbox" name="service" value="base-brake" data-name="Brake Service">
+                        Brake Check & Pad Replacement
                     </label>
                 </div>
                 <div class="checkbox-group">
                     <label>
-                        <input type="checkbox" name="service" value="500" data-name="Tire Check">
-                        Tire Pressure & Check (₹500)
+                        <input type="checkbox" name="service" value="base-tire" data-name="Tire Check">
+                        Tire Pressure & Check
                     </label>
                 </div>
                 
                 <div class="result-box">
                     <h3>Estimated Total: <span id="totalCost">₹0</span></h3>
+                    <small id="bikeNote" style="color: #aaa; display: block; margin-top: 5px;">Select a bike to see pricing</small>
                 </div>
-                <button type="button" id="calculateBtn" class="btn-primary">Calculate Cost</button>
+                <button type="button" id="calculateBtn" class="btn-primary" disabled>Calculate Cost</button>
             </form>
         </div>
     </section>
@@ -103,10 +125,10 @@
     <section id="contact" class="contact">
         <h2>Book a Service</h2>
         <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="text" placeholder="Bike Model" required>
-            <textarea placeholder="Describe the issue..." rows="5" required></textarea>
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="contactEmail" placeholder="Your Email" required>
+            <input type="text" id="contactBike" placeholder="Bike Model" required>
+            <textarea id="contactMessage" placeholder="Describe the issue..." rows="5" required></textarea>
             <button type="submit" class="btn-primary">Submit Request</button>
         </form>
     </section>
@@ -115,6 +137,7 @@
         <p>&copy; 2026 Pro Bike Care. Built by Nitesh Singh.</p>
     </footer>
 
+    <!-- Script loaded as module to avoid global scope pollution -->
     <script src="script.js"></script>
 </body>
 </html>
