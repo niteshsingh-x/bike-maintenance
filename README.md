@@ -22,5 +22,4 @@ bike-maintenance/
 ├── index.html          # Main landing page
 ├── style.css           # All styling (Dark mode, responsive)
 ├── script.js           # JavaScript logic (Calculator, Form handling)
-├── assets/             # Images and icons (if any)
 └── README.md           # This file
