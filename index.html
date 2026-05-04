@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Bike Care | Maintenance & Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Pro<span>Bike</span>Care</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#calculator">Cost Calculator</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Keep Your Ride <span class="highlight">Perfect</span></h1>
+            <p>Expert maintenance tips, cost estimation, and service booking for all bike models.</p>
+            <a href="#services" class="btn-primary">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-oil-can"></i>
+                <h3>Oil Change</h3>
+                <p>Complete engine oil replacement and filter check.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Chain & Gear</h3>
+                <p>Lubrication, tensioning, and replacement if needed.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Brake Check</h3>
+                <p>Pad replacement, fluid top-up, and system inspection.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-battery-full"></i>
+                <h3>Battery & Electrical</h3>
+                <p>Battery health check and electrical system diagnostics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Calculator -->
+    <section id="calculator" class="calculator-section">
+        <h2>Maintenance Cost Estimator</h2>
+        <p>Select the services you need to get an estimated cost.</p>
+        
+        <div class="calculator-box">
+            <form id="serviceForm">
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="service" value="1500" data-name="Oil Change">
+                        Oil Change (₹1500)
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="service" value="800" data-name="Chain Service">
+                        Chain & Gear Service (₹800)
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="service" value="1200" data-name="Brake Service">
+                        Brake Check & Pad Replacement (₹1200)
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="service" value="500" data-name="Tire Check">
+                        Tire Pressure & Check (₹500)
+                    </label>
+                </div>
+                
+                <div class="result-box">
+                    <h3>Estimated Total: <span id="totalCost">₹0</span></h3>
+                </div>
+                <button type="button" id="calculateBtn" class="btn-primary">Calculate Cost</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Book a Service</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Bike Model" required>
+            <textarea placeholder="Describe the issue..." rows="5" required></textarea>
+            <button type="submit" class="btn-primary">Submit Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pro Bike Care. Built by Nitesh Singh.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
